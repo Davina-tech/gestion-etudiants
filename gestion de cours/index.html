@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestion des cours</title>
+  <link rel="stylesheet" href="C:/Users/pc/Desktop/gestion de cours/style.css" />
+</head>
+<body>
+  <h1>Gestion des cours</h1>
+
+  <form id="cours-form">
+    <input type="text" id="nomCours" placeholder="Nom du cours" required />
+    <input type="text" id="codeCours" placeholder="Code du cours" required />
+    <textarea id="descriptionCours" placeholder="Description du cours" required></textarea>
+    <button type="submit">Ajouter le cours</button>
+  </form>
+
+  <h2>Liste des cours</h2>
+  <ul id="liste-cours"></ul>
+
+  <script src="cours.js"></script>
+
+<script>
+const form = document.getElementById('cours-form');
+const nomInput = document.getElementById('nomCours');
+const codeInput = document.getElementById('codeCours');
+const descriptionInput = document.getElementById('descriptionCours');
+const liste = document.getElementById('liste-cours');
+
+let cours = JSON.parse(localStorage.getItem('cours')) || [];
+afficherCours();
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const nom = nomInput.value.trim();
+  const code = codeInput.value.trim();
+  const description = descriptionInput.value.trim();
+
+  if (nom && code && description) {
+    const nouveauCours = { nom, code, description };
+    cours.push(nouveauCours);
+    sauvegarderCours();
+    afficherCours();
+    form.reset();
+  }
+});
+
+function sauvegarderCours() {
+  localStorage.setItem('cours', JSON.stringify(cours));
+}
+
+function afficherCours() {
+  liste.innerHTML = '';
+  cours.forEach((coursItem, index) => {
+    const li = document.createElement('li');
+
+    const contenu = document.createElement('div');
+    contenu.innerHTML = `<strong>${coursItem.nom}</strong> (${coursItem.code})<br>
+                         <small>${coursItem.description}</small>`;
+
+    const boutonSupprimer = document.createElement('button');
+    boutonSupprimer.textContent = 'Supprimer';
+    boutonSupprimer.addEventListener('click', () => {
+      supprimerCours(index);
+    });
+
+    li.appendChild(contenu);
+    li.appendChild(boutonSupprimer);
+    liste.appendChild(li);
+  });
+}
+
+function supprimerCours(index) {
+  cours.splice(index, 1);
+  sauvegarderCours();
+  afficherCours();
+}
+</script>
+</body>
+</html>

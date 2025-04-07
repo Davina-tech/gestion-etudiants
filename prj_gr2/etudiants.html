@@ -3,22 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des Étudiants</title>
+    <title>Gestion des Étudiants 🎓</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Gestion des Étudiants</h1>
-    
+    <h1>Gestion des Étudiants 🎓</h1>
     
     <form id="formEtudiant">
         <input type="text" id="nom" placeholder="Nom" required>
         <input type="text" id="prenom" placeholder="Prénom" required>
         <input type="email" id="email" placeholder="Email" required>
-        <button type="submit">Ajouter l'étudiant</button>
+        
+        <!-- Ajout des sous-titres pour la date de naissance et date d'inscription -->
+        <label for="dateNaissance">Date de naissance:</label>
+        <input type="date" id="dateNaissance" placeholder="Date de naissance" required>
+        
+        <label for="dateInscription">Date d'inscription:</label>
+        <input type="date" id="dateInscription" placeholder="Date d'inscription" required>
+        
+        <!-- Sélecteur de Branche d'Étude -->
+        <label for="brancheEtude">Branche d'étude:</label>
+        <select id="brancheEtude" required>
+            <option value="">Choisir la Branche d'Étude</option>
+            <option value="Informatique">Informatique</option>
+            <option value="Médecine">Médecine</option>
+            <option value="Droit">Droit</option>
+            <option value="Sciences Économiques">Sciences Économiques</option>
+            <option value="Psychologie">Psychologie</option>
+            <option value="Arts">Arts</option>
+        </select>
+
+        <button type="submit">Ajouter l'étudiant 👨‍🎓</button>
     </form>
 
-    
-    <h2>Liste des Étudiants</h2>
+    <h2>Liste des Étudiants 👩‍🎓</h2>
     <ul id="listeEtudiants">
     
     </ul>

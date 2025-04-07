@@ -1,0 +1,93 @@
+/* === RESET GLOBAL === */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+/* === VARIABLES CSS === */
+:root {
+ --color-base: #0A0F27;
+ --color-section: #043775;
+ --color-subsection: #12769E;
+ --color-button: #001952;
+ --color-text: #FCF6F3;
+}
+
+/* === TYPO / BODY === */
+body {
+ font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+ background-color: var(--color-base);
+ color: var(--color-text);
+ line-height: 1.6;
+}
+
+/* === CONTAINER === */
+.container {
+ width: 90%;
+ max-width: 1000px;
+ margin: 0 auto;
+}
+
+/* === HEADER === */
+.header {
+ background-color: var(--color-section);
+ padding: 20px 0;
+ border-radius: 8px;
+ margin-bottom: 30px;
+}
+
+.header h1 {
+ text-align: center;
+ margin-bottom: 10px;
+ color: var(--color-text);
+}
+
+/* === NAVIGATION === */
+.nav ul {
+ display: flex;
+ justify-content: center;
+ gap: 20px;
+ list-style: none;
+}
+
+.nav a {
+ color: var(--color-text);
+ text-decoration: none;
+ font-weight: bold;
+ background-color: var(--color-button);
+ padding: 8px 16px;
+ border-radius: 5px;
+ transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+ background-color: var(--color-subsection);
+}
+
+/* === MAIN CONTENT === */
+.main-content {
+ background-color: var(--color-section);
+ padding: 30px;
+ border-radius: 8px;
+}
+
+.main-content h2 {
+ font-size: 1.8rem;
+ color: var(--color-text);
+ margin-bottom: 15px;
+}
+
+.main-content p {
+ font-size: 1.05rem;
+}
+
+/* === FOOTER === */
+.footer {
+ text-align: center;
+ margin-top: 40px;
+ padding-top: 20px;
+ border-top: 1px solid var(--color-subsection);
+ font-size: 0.9rem;
+ color: var(--color-text);
+}

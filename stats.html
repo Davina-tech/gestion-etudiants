@@ -12,10 +12,15 @@
   <div id="header">
     <div id="hold">
       <input id="ipt" type="text" placeholder="Enter votre nom et prenom">
-      <button id="b2"><img id="sear" src="search.png" alt=""></button>
+      <button id="b2" ><img id="sear" src="search.png" alt=""></button>
+      <div id="log">
+        <button class="log_but">LOG IN</button>
+        <button class="log_but">SIGN IN</button>
+        <a href="" id="help">help?</a>
+      </div>
     </div>
 
-    <button id="b1" class="account">
+    <button id="b1" class="account" onclick="togg()" >
       <div id="acc">
         <img id="acc_pic" src="account.png" alt="">
       </div>
@@ -30,13 +35,8 @@
   </div>
   <div id="container">
     <div id="cont">
-      <div id="red" class="main">
+      <div id="cours" class="main">
         <div id="top_bar">
-          <h3 id="name">Cours</h3>
-          <h3 id="">NOMBRE D'ETUDIANT</h3>
-          <h3 id="">DUREE</h3>
-        </div>
-        <div id="buttom_bar">
           <h3 id="name">Cours</h3>
           <h3 id="">NOMBRE D'ETUDIANT</h3>
           <h3 id="">DUREE</h3>
@@ -44,7 +44,8 @@
       </div>
 
     </div>
-    <script src="stats.js"></script>
+  
+    <script src="stats2.js"></script>
 </body>
 
 </html>

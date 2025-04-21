@@ -63,3 +63,6 @@ titles.forEach(text => {
 
 // Append buttom_bar to the #red container
 document.getElementById("red").appendChild(bottomBar);
+
+
+let
